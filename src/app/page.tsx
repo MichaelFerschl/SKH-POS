@@ -1,12 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import { DishList, Dish } from "../components/DishList";
+import { DishList } from "../components/DishList";
 import { OtherDishDialog } from "../components/OtherDishDialog";
-import {
-  DepositList,
-  DepositItem,
-  depositItems,
-} from "../components/DepositList";
+import { DepositList, depositItems } from "../components/DepositList";
 import { Receipt, ReceiptItem } from "../components/Receipt";
 import { TotalDisplay } from "../components/TotalDisplay";
 import { PayDialog } from "../components/PayDialog";
@@ -22,7 +18,11 @@ export default function Home() {
   const [printerIp, setPrinterIp] = useState<string>("192.168.2.102");
 
   // Automatisch Pfand zu Speise hinzufügen (ohne Sonstiges)
-  const handleAddDish = (dish: Dish) => {
+  const handleAddDish = (dish: {
+    name: string;
+    price: number;
+    type?: string;
+  }) => {
     setItems((prev) => {
       // Für "Kloß Extra" KEIN Pfand hinzufügen
       if (dish.name === "Kloß Extra") {
@@ -50,7 +50,11 @@ export default function Home() {
   };
 
   // Pfand separat hinzufügen
-  const handleAddDeposit = (item: DepositItem) => {
+  const handleAddDeposit = (item: {
+    name: string;
+    price: number;
+    type?: string;
+  }) => {
     setItems((prev) => [
       ...prev,
       { name: item.name, price: item.price, type: "deposit" },

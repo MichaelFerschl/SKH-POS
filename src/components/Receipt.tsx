@@ -1,6 +1,6 @@
 import React from "react";
-import { Dish } from "./DishList";
-import { DepositItem } from "./DepositList";
+// import { Dish } from "./DishList";
+// import { DepositItem } from "./DepositList";
 
 export type ReceiptItem = {
   name: string;
