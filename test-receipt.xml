@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header>
+    <parameter xmlns="http://www.epson-pos.com/schemas/2011/03/epos-print">
+      <devid>local_printer</devid>
+      <timeout>60000</timeout>
+      <printjobid>job_test</printjobid>
+    </parameter>
+  </s:Header>
+  <s:Body>
+    <epos-print xmlns="http://www.epson-pos.com/schemas/2011/03/epos-print">
+      <text align="left" />
+      <text dw="true" dh="true" />
+      <text>SK-Heuchling Sommerfest&#10;</text>
+      <text>------------------------------&#10;</text>
+      <text width="2">Bratwurst        3.00 €&#10;</text>
+      <text>------------------------------&#10;</text>
+      <text>Pfandbecher      1.00 € Pfand&#10;</text>
+      <text>------------------------------&#10;</text>
+      <text width="2">Gesamt: 4.00 €&#10;</text>
+      <text>Gegeben: 5.00 €&#10;</text>
+      <text>Rückgeld: 1.00 €&#10;</text>
+      <text>------------------------------&#10;</text>
+      <text>Pfandübersicht:&#10;</text>
+      <text>Becher      x1 = 1.00 €&#10;</text>
+      <cut type="feed"/>
+    </epos-print>
+  </s:Body>
+</s:Envelope>
